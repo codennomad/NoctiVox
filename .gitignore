@@ -1,0 +1,42 @@
+# Diretórios Python
+__pycache__/
+.mypy_cache/
+.noctivox_cache/
+.noctivox_env/
+
+# Logs
+*.log
+logs/
+
+# Ambiente virtual
+.env
+*.env
+noctivox_env
+
+# Credenciais e tokens
+client_secrets.json
+token.pickle
+
+# Arquivos temporários e binários
+*.pyc
+*.pyo
+*.pyd
+*.mkv
+*.mp4
+*.wav
+*.tmp
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de output/resultados
+processing_report.txt
+system_prompt.json
+
+# Jupyter (caso você adicione notebooks depois)
+.ipynb_checkpoints/
+
+# PyCharm/VSCode (se usar)
+.idea/
+.vscode/
