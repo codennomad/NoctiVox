@@ -655,12 +655,26 @@ class VideoSTT:
                 f.write(f"{speaker_prefix}{segment['text']}\n\n")
                 
     def _save_txt(self, output_path: str):
-        """Save results as plain text"""
+        """Save results as plain text in the format:
+        [HH:MM:SS.ss - HH:MM:SS.ss] Speaker X: line of transcribed text
+        """
+        def format_timestamp(seconds: float) -> str:
+            td = datetime.timedelta(seconds=seconds)
+            total_seconds = td.total_seconds()
+            hours = int(total_seconds // 3600)
+            minutes = int((total_seconds % 3600) // 60)
+            secs = total_seconds % 60
+            return f"{hours:02d}:{minutes:02d}:{secs:05.2f}"
+
         with open(output_path, 'w', encoding='utf-8') as f:
             for segment in self.transcription:
-                speaker = segment.get("speaker", "")
-                speaker_prefix = f"[{speaker}] " if speaker else ""
-                f.write(f"{speaker_prefix}{segment['text']}\n")
+                start = segment.get("start", 0.0)
+                end = segment.get("end", 0.0)
+                speaker = segment.get("speaker", "UNKNOWN")
+                text = segment.get("text", "")
+                start_str = format_timestamp(start)
+                end_str = format_timestamp(end)
+                f.write(f"[{start_str} - {end_str}] {speaker}: {text}\n")
                 
     def _format_timestamp(self, seconds: float, vtt: bool = False) -> str:
         """Format timestamp for subtitle files"""

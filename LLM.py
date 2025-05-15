@@ -72,10 +72,20 @@ def process_text(
             model=model,
             messages=messages
         )
-        logger.info("Answer received sucessfully")
-        return completion.choices[0].message.content
+        logger.info("Answer received successfully")
+        # Robustly check the response structure
+        if (completion is not None and
+            hasattr(completion, "choices") and
+            isinstance(completion.choices, list) and
+            len(completion.choices) > 0 and
+            hasattr(completion.choices[0], "message") and
+            hasattr(completion.choices[0].message, "content")):
+            return completion.choices[0].message.content
+        else:
+            logger.error(f"Invalid response structure: {completion}")
+            return "Error: Received invalid response from the language model API."
     except Exception as e:
-        logger.error(f"Erro processing text: {e}", exc_info=True)
+        logger.error(f"Error processing text: {e}", exc_info=True)
         return f"Error processing text: {e}"
     
     

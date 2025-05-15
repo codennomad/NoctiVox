@@ -240,7 +240,7 @@ TITLE:"""
             
             # Save individual transcription
             output_path = video_path.with_name(video_path.stem+'_transcription.txt')
-            video_stt.save_result(str(output_path))
+            video_stt.save_results(str(output_path))
             
             # Generate title with LLM
             new_title = None
