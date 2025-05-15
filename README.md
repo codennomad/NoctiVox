@@ -78,7 +78,7 @@ Gabriel Henrique
 
 📧 gabrielheh03@gmail.com
 
-🧠 AI Intern Candidate | NeuroTech | Python Developer
+🧠 AI | NeuroTech | Python Developer
 
 ## 📄 License
 
