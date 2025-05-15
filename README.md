@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 ## 🔐 .env Configuration
 
-#Your .env file should include the following:
+Your .env file should include the following:
 
 ```bash
 OPENROUTER_API_KEY=your_openrouter_key_here
@@ -72,9 +72,12 @@ These are required to use external APIs like OpenRouter (for GPT-based title gen
 
 ## 🙋‍♂️ Author
 
-Gabriel Henrique Ferreira Vieira
+Gabriel Henrique 
+
 🔗 [LinkedIn](https://www.linkedin.com/in/gabrielhenriquefv/)
+
 📧 gabrielheh03@gmail.com
+
 🧠 AI Intern Candidate | NeuroTech | Python Developer
 
 ## 📄 License
