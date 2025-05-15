@@ -74,7 +74,7 @@ These are required to use external APIs like OpenRouter (for GPT-based title gen
 
 Gabriel Henrique 
 
-🔗 [LinkedIn](https://www.linkedin.com/in/gabrielhenriquefv/)
+🔗 [LinkedIn](https://www.linkedin.com/in/gabrielhenrique-tech/)
 
 📧 gabrielheh03@gmail.com
 
